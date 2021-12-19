@@ -9,10 +9,10 @@ and open the template in the editor.
          "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-    <definition name="baseLayout" template="/WEB-INF/layout/base.jsp">
+    <definition name="baseLayout" template="/WEB-INF/layouts/base.jsp">
         <put-attribute name="title" value="..." />
-        <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
-        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
-        <put-attribute name="content" value="..." />
+        <put-attribute name="header" value="/WEB-INF/layouts/header.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp" />
+        <put-attribute name="content" value="BASE" />
     </definition>
 </tiles-definitions>
