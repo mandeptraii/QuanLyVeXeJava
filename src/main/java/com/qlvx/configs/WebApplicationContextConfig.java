@@ -7,7 +7,6 @@ package com.qlvx.configs;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
-import com.qlvx.formatter.CategoryFormatter;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -57,11 +56,6 @@ public class WebApplicationContextConfig
     @Override
     public Validator getValidator() {
         return validator;
-    }
-
-    @Override
-    public void addFormatters(FormatterRegistry registry) {
-        registry.addFormatter(new CategoryFormatter());
     }
     
     
