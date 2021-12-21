@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.qldatve.configs;
+package com.qlvx.configs;
 
 
 import java.util.Properties;
@@ -32,7 +32,7 @@ public class HibernateConfig {
         LocalSessionFactoryBean factory = new LocalSessionFactoryBean();
         
         factory.setPackagesToScan(new String[] {
-            "com.qldatve.pojo"
+            "com.dht.pojo"
         });
         
         factory.setDataSource(dataSource());
