@@ -3,33 +3,51 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.qldatve.controllers;
+package com.qlvx.controllers;
 
-import com.qldatve.service.TuyenService;
+import com.qlvx.pojo.Cart;
+import com.qlvx.service.CategoryService;
+import com.qlvx.service.ProductService;
+import com.qlvx.sunsaleapp.Utils;
+import java.util.Map;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
- * @author Admin
+ * @author duonghuuthanh
  */
 @Controller
 @ControllerAdvice
 public class HomeController {
     @Autowired
-    private TuyenService tuyenService;
+    private CategoryService categoryService;
+    @Autowired
+    private ProductService productService;
+    
     
     @ModelAttribute
-    public void commonAttrs(Model model){
-        model.addAttribute("Tuyen", this.tuyenService.getTuyen());
+    public void commonAttributes(Model model, HttpSession session) {
+        model.addAttribute("categories", this.categoryService.getCategories());
+        model.addAttribute("cartStats", Utils.countCart((Map<Integer, Cart>) session.getAttribute("cart")));
+        model.addAttribute("currentUser", session.getAttribute("currentUser"));
     }
+    
+    @RequestMapping("/")
+    public String index(Model model, 
+            @RequestParam(value="kw", required = false) String kw,
+            @RequestParam(value="cateId", required = false) Integer cateId) {
+        if (cateId == null)
+            model.addAttribute("products", this.productService.getProducts(kw));
+        else
+            model.addAttribute("products", this.productService.getProducts(cateId));
         
-    @GetMapping("/")
-    public String index(){
-        return "baseLayout";
+        return "index";
     }
 }
