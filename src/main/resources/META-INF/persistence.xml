@@ -2,17 +2,18 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
   <persistence-unit name="com.duyn_AppQuanLyDatVe_war_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-    <class>com.qldatve.pojo.QuanlyUser</class>
-    <class>com.qldatve.pojo.QuanlyVexe</class>
-    <class>com.qldatve.pojo.QuanlyChuyen</class>
-    <class>com.qldatve.pojo.QuanlyBenxe</class>
-    <class>com.qldatve.pojo.QuanlyTuyen</class>
-    <class>com.qldatve.pojo.QuanlyChitieu</class>
-    <class>com.qldatve.pojo.QuanlyDanhgia</class>
-    <class>com.qldatve.pojo.QuanlyXebaotri</class>
-    <class>com.qldatve.pojo.QuanlyGhe</class>
-    <class>com.qldatve.pojo.QuanlyXe</class>
-    <class>com.qldatve.pojo.QuanlyXevaghe</class>
+    <class>com.qldatve.pojos.QuanlyXevaghe</class>
+    <class>com.qldatve.pojos.QuanlyChuyen</class>
+    <class>com.qldatve.pojos.QuanlyDanhgia</class>
+    <class>com.qldatve.pojos.QuanlyChitieu</class>
+    <class>com.qldatve.pojos.QuanlyGhe</class>
+    <class>com.qldatve.pojos.QuanlyBenxe</class>
+    <class>com.qldatve.pojos.QuanlyXebaotri</class>
+    <class>com.qldatve.pojos.QuanlyUser</class>
+    <class>com.qldatve.pojos.QuanlyXe</class>
+    <class>com.qldatve.pojos.QuanlyTuyen</class>
+    <class>com.qldatve.pojos.QuanlyVexe</class>
+    <class>com.qldatve.pojos.Benxe</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dbjava?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
