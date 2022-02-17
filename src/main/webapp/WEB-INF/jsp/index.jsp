@@ -13,12 +13,7 @@
         <title>JSP Pasge</title>
     </head>
     <body>
-        <ul>
-            <c:forEach var="ben" items="${benxe}" >
-                <li>${ben.idBenXe} - ${ben.diaChi}</li>    
-            </c:forEach>
-            
-        </ul>
+        
         <h1>Hello World!</h1>
     </body>
 </html>
