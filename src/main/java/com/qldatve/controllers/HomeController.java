@@ -5,7 +5,7 @@
  */
 package com.qldatve.controllers;
 
-//import com.qldatve.service.TuyenService;
+import com.qldatve.service.TuyenService;
 import javax.persistence.Query;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,12 +29,12 @@ public class HomeController {
     
     @RequestMapping("/")//@Transactional
     public String index(Model model){
-        Session s = sessionFactory.getObject().getCurrentSession();
+        Session s = sessionFactory.getObject().openSession();
         Query q = s.createQuery("From Benxe");
         model.addAttribute("benxe", q.getResultList());
-        //s.close();
+        s.close();
         
-        return "index";
+        return "baseLayout";
     }
     
 //    @Autowired
