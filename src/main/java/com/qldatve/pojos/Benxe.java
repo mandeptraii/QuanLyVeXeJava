@@ -5,16 +5,19 @@
 package com.qldatve.pojos;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -28,6 +31,11 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Benxe.findByIdBenXe", query = "SELECT b FROM Benxe b WHERE b.idBenXe = :idBenXe"),
     @NamedQuery(name = "Benxe.findByDiaChi", query = "SELECT b FROM Benxe b WHERE b.diaChi = :diaChi")})
 public class Benxe implements Serializable {
+
+    @OneToMany(mappedBy = "noiDenid")
+    private Collection<Tuyen> tuyenCollection;
+    @OneToMany(mappedBy = "noiKhoiHanhid")
+    private Collection<Tuyen> tuyenCollection1;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -85,6 +93,24 @@ public class Benxe implements Serializable {
     @Override
     public String toString() {
         return "com.qldatve.pojos.Benxe[ idBenXe=" + idBenXe + " ]";
+    }
+
+    @XmlTransient
+    public Collection<Tuyen> getTuyenCollection() {
+        return tuyenCollection;
+    }
+
+    public void setTuyenCollection(Collection<Tuyen> tuyenCollection) {
+        this.tuyenCollection = tuyenCollection;
+    }
+
+    @XmlTransient
+    public Collection<Tuyen> getTuyenCollection1() {
+        return tuyenCollection1;
+    }
+
+    public void setTuyenCollection1(Collection<Tuyen> tuyenCollection1) {
+        this.tuyenCollection1 = tuyenCollection1;
     }
     
 }

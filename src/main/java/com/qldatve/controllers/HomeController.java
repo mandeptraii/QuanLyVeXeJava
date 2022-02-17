@@ -27,12 +27,12 @@ public class HomeController {
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
     
-    @RequestMapping("/")
+    @RequestMapping("/")//@Transactional
     public String index(Model model){
-        Session s = sessionFactory.getObject().openSession();
+        Session s = sessionFactory.getObject().getCurrentSession();
         Query q = s.createQuery("From Benxe");
         model.addAttribute("benxe", q.getResultList());
-        s.close();
+        //s.close();
         
         return "index";
     }

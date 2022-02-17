@@ -14,6 +14,11 @@
     <class>com.qldatve.pojos.QuanlyTuyen</class>
     <class>com.qldatve.pojos.QuanlyVexe</class>
     <class>com.qldatve.pojos.Benxe</class>
+    <class>com.qldatve.pojos.Vexe</class>
+    <class>com.qldatve.pojos.User</class>
+    <class>com.qldatve.pojos.Danhgia</class>
+    <class>com.qldatve.pojos.Chuyen</class>
+    <class>com.qldatve.pojos.Tuyen</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/dbjava?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
